@@ -11,7 +11,7 @@ special_characters = "!£$%^&*()-_=+[{]};:'@#~,<.>/?\\|"
 length = int(input("Password Length: "))
 amount = int(input("Amount of Passwords: "))
 print_to_file = input("Print to File? ")
-if print_to_file == "yes" or print_to_file == "Yes" or print_to_file == "True" or print_to_file == "true":
+if print_to_file in ["Yes", "yes", "True", "true"]:
 	filename = input("File Name: ")
 	print_to_file = True
 
@@ -30,7 +30,7 @@ if nums == True:
 if spec_chars == True:
 	all += special_characters
 
-for x in range(int(amount)):
+for x in range(amount):
 	password = "".join(random.sample(all,length))
 	print (password)
 #randomly samples characters from variable all the amount of times variable length specifies
