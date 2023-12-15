@@ -1,39 +1,20 @@
 import random
 
-digits = "1234567890"
-
-length = int(input("Amount of Digits: "))
+upperb = int(input("Upper Bound: "))
+lowerb = int(input("Lower Bound: "))
 amount = int(input("Amount of Numbers: "))
-state = input("Positive, Negative or Random: ")
 print_to_file = input("Print to File? ")
+#User input parameters for number generated
 
-if print_to_file in ["yes", "Yes", "True", "true"]:
+if print_to_file in ["yes", "Yes"]:
 	filename = input("File Name: ")
 	print_to_file = True
-if length > 10:
-	digits = "1234567890" * length
-
-if state in ["Positve", "positive"]:
-	type = False
-elif state in ["Negative", "negative"]:
-	type = True
 
 for x in range(amount):
-	number = "".join(random.sample(digits,length))
-	if type == False:
-		print (" ", number)
-	if type == True:
-		print ("-", number)
-	if type not in [True, False]:
-		print (random.choice(["-", " "]), number)
-# Prints Number with negative or no negative
+	number = str(random.randint(lowerb, upperb))
+	print (number)
 	if print_to_file == True:
 		with open(filename, "a") as f:
-			if type == True:
-				f.write("-", number)
-				f.write("\n")
-			if type == False:
-				f.write(number)
-				f.write("\n")
+			f.write( number, "\n")
 input()
-# Keeps terminal open after; remove if running from command line i.e. python3 rng-v1.py
+# Keeps terminal open after; can be removed if running from command line i.e. python3 rng-v1.py

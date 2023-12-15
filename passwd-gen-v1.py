@@ -1,43 +1,28 @@
-#!/usr/bin/python3
-
 import random 
 
-uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lowercase_letters = uppercase_letters.lower()
+uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+lowercase = uppercase.lower()
 digits = "1234567890"
-special_characters = "!£$%^&*()-_=+[{]};:'@#~,<.>/?\\|"
+spec_chars = "!£$%^&*()-_=+[{]};:\'@#~,<.>/?\\|"
 #characters used in password 
 
 length = int(input("Password Length: "))
 amount = int(input("Amount of Passwords: "))
 print_to_file = input("Print to File? ")
-if print_to_file in ["Yes", "yes", "True", "true"]:
+if print_to_file in ["Yes", "yes"]:
 	filename = input("File Name: ")
 	print_to_file = True
 
-upper,lower,nums,spec_chars = True,True,True,True
-#edit booleans in order depending on what you characters want in the password(s)
-
-all = ""
-#where the characters are sampled from
-
-if upper == True:
-	all += uppercase_letters
-if lower == True:
-	all += lowercase_letters
-if nums == True:
-	all += digits
-if spec_chars == True:
-	all += special_characters
+all = (uppercase + lowercase + digits + spec_chars)
+#where the characters are sampled from; edit depending on what you characters want in the password(s)
 
 for x in range(amount):
-	password = "".join(random.sample(all,length))
+	password = "".join(random.sample(all, length))
 	print (password)
-#randomly samples characters from variable all the amount of times variable length specifies
-#and does this the number of times variable specifies
+#randomly samples characters from variable 'all'
 	if print_to_file == True:
 		with open(filename, "a") as f:
 			f.write(password)
 			f.write("\n")
 input() 
-# Keeps terminal open after; remove if running from command line i.e. python3 passwd-gen-v1.py
+# Keeps terminal open after; can be removed if running from command line i.e. python3 passwd-gen-v1.py
