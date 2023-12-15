@@ -39,3 +39,5 @@ for x in range(amount):
 		with open(filename, "a") as f:
 			f.write(password)
 			f.write("\n")
+input() 
+# Keeps terminal open after; remove if running from command line i.e. python3 passwd-gen-v1.py

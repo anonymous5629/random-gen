@@ -35,3 +35,5 @@ for x in range(amount):
 			if type == False:
 				f.write(number)
 				f.write("\n")
+input()
+# Keeps terminal open after; remove if running from command line i.e. python3 rng-v1.py
