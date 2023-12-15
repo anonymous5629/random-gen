@@ -1,4 +1,4 @@
-import random 
+from random import sample
 
 uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lowercase = uppercase.lower()
@@ -17,7 +17,7 @@ all = (uppercase + lowercase + digits + spec_chars)
 #where the characters are sampled from; edit depending on what you characters want in the password(s)
 
 for x in range(amount):
-	password = "".join(random.sample(all, length))
+	password = "".join(sample(all, length))
 	print (password)
 #randomly samples characters from variable 'all'
 	if print_to_file == True:
