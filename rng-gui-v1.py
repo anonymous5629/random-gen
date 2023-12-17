@@ -15,7 +15,6 @@ def rng():
 		filename = filenm.get()
 		with open(filename, "a") as f:
 			f.write(numlst)
-	numlist.clear()
 	
 gui = tk.Tk()
 gui.geometry("550x500")

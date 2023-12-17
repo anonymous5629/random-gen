@@ -15,9 +15,10 @@ numlist = []
 for x in range(amount):
 	number = round(uniform(lowerb, upperb), decimal)
 	numlist.append(number)
-print(*numlist, sep = "\n")
+numlst = ("\n".join(map(str, numlist)))
+print(numlst)
 if print_to_file == True:
 	with open(filename, "a") as f:
-		f.write(*numlist, sep = "\n")			
+		f.write(numlst)			
 input()
 # Keeps terminal open after; can be removed if running from command line i.e. python3 rng-v1.py
