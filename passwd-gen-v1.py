@@ -14,7 +14,7 @@ if print_to_file in ["Yes", "yes"]:
 
 all = (uppercase + lowercase + digits + spec_chars)
 if length > 99:
-	all = all*length
+	all = all*int(length/10)
 #where the characters are sampled from; edit depending on what you characters want in the password(s)
 passlist = []
 
