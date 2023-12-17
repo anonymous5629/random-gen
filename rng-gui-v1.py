@@ -1,8 +1,6 @@
 from random import uniform
 import tkinter as tk
 
-
-
 def rng():
 	amount, upperb, lowerb, decimal, print_to_file = amot.get(), float(upb.get()), float(lowb.get()), deci.get(), ptf.get()
 	numlist = []
@@ -10,11 +8,11 @@ def rng():
 		number = round(uniform(lowerb, upperb), decimal)
 		numlist.append(number)
 	numlst = ("\n".join(map(str, numlist)))
-	print(numlst)
 	if print_to_file == True:
 		filename = filenm.get()
 		with open(filename, "a") as f:
 			f.write(numlst)
+	print(numlst)
 	
 gui = tk.Tk()
 gui.geometry("550x500")
