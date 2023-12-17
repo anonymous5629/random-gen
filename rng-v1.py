@@ -1,7 +1,7 @@
 from random import uniform
 
-upperb = int(input("Upper Bound: "))
-lowerb = int(input("Lower Bound: "))
+upperb = float(input("Upper Bound: "))
+lowerb = float(input("Lower Bound: "))
 decimal = int(input("Amount of Decimals: "))
 amount = int(input("Amount of Numbers: "))
 print_to_file = input("Print to File? ")
